@@ -1,0 +1,6 @@
+PyYAML
+lxml
+pandas
+pysam
+xmltodict
+requests
