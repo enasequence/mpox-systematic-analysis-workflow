@@ -105,12 +105,12 @@ def ena_analysis_submit(run_accession, sample_accession, projects_accounts_csv, 
     # Submit files using ena-analysis-submitter.py
     if study_accession == 'PRJEB55834':
         os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p PRJEB55825 -s {sample_accession} -r {run_accession} -f {output_tgz_path} -a PATHOGEN_ANALYSIS -au {webin_id} -ap {webin_password} > {output_tgz_path}_submit.txt")
-        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p PRJEB55823 -s {sample_accession} -r {run_accession} -f {filtered_vcf_gz_path} -a COVID19_FILTERED_VCF -au {webin_id} -ap {webin_password} > {filtered_vcf_gz_path}_submit.txt")
-        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p PRJEB55824 -s {sample_accession} -r {run_accession} -f {consensus_fasta_gz_path} -a COVID19_CONSENSUS -au {webin_id} -ap {webin_password} > {consensus_fasta_gz_path}_submit.txt")
+        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p PRJEB55823 -s {sample_accession} -r {run_accession} -f {filtered_vcf_gz_path} -a FILTERED_VARIATION -au {webin_id} -ap {webin_password} > {filtered_vcf_gz_path}_submit.txt")
+        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p PRJEB55824 -s {sample_accession} -r {run_accession} -f {consensus_fasta_gz_path} -a SEQUENCE_CONSENSUS -au {webin_id} -ap {webin_password} > {consensus_fasta_gz_path}_submit.txt")
     else:
         os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p {study_accession} -s {sample_accession} -r {run_accession} -f {output_tgz_path} -a PATHOGEN_ANALYSIS -au {webin_id} -ap {webin_password} > {output_tgz_path}_submit.txt")
-        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p {study_accession} -s {sample_accession} -r {run_accession} -f {filtered_vcf_gz_path} -a COVID19_FILTERED_VCF -au {webin_id} -ap {webin_password} > {filtered_vcf_gz_path}_submit.txt")
-        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p {study_accession} -s {sample_accession} -r {run_accession} -f {consensus_fasta_gz_path} -a COVID19_CONSENSUS -au {webin_id} -ap {webin_password} > {consensus_fasta_gz_path}_submit.txt")
+        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p {study_accession} -s {sample_accession} -r {run_accession} -f {filtered_vcf_gz_path} -a FILTERED_VARIATION -au {webin_id} -ap {webin_password} > {filtered_vcf_gz_path}_submit.txt")
+        os.system(f"{workflowPath}/bin/ena-analysis-submitter.py -p {study_accession} -s {sample_accession} -r {run_accession} -f {consensus_fasta_gz_path} -a SEQUENCE_CONSENSUS -au {webin_id} -ap {webin_password} > {consensus_fasta_gz_path}_submit.txt")
 
 def process_data(row):
     try:
